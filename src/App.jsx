@@ -15,7 +15,7 @@ function App() {
         const token = Cookies.get('token') || null;
         const user = JSON.parse(Cookies.get('user') || null) ;
         if (!token || !user)
-            navigate('/signin');
+            return navigate('/signin');
         dispatch(login({ token, user }));
         const path = window.location.pathname;
         if (path === '/signin' || path === '/signup')
@@ -24,7 +24,7 @@ function App() {
     return (
         <Routes>
             <Route element={<PrivateRoutes/>}>
-                <Route path="/map" element={<MapContainer/>}/>
+                <Route path="/" element={<MapContainer/>}/>
             </Route>
             <Route path="/signin" element={<Signin/>}/>
             <Route path="/signup" element={<Signup/>}/>

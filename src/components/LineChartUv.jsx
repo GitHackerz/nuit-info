@@ -1,16 +1,15 @@
-import React from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto'; // Import the 'chart.js/auto' module
 
-const LineChart = ({ input, label }) => {
+const LineChartTemp = ({ inputUv }) => {
     const data = {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [
             {
-                label: label ,
-                data: input,
+                label: 'UV Index',
+                data: inputUv,
                 fill: false,
-                borderColor: 'rgba(75,192,192,1)',
+                borderColor: 'rgba(255,0,0,1)',
                 borderWidth: 2
             }
         ]
@@ -26,10 +25,10 @@ const LineChart = ({ input, label }) => {
 
     return (
         <div >
-            <h2>{label}</h2>
+            <h2>UV Index</h2>
             <Line data={data} options={options} />
         </div>
     );
 };
 
-export default LineChart;
+export default LineChartTemp;
