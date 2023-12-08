@@ -55,6 +55,7 @@ export default function MapContainer() {
                 <LineChartTemp inputMax={maxTemp} inputMin={minTemp} />
                 <LineChartUv inputUv={uvIndex} />
             </div>
+
         </div>
     );
 }
