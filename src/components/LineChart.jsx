@@ -1,12 +1,14 @@
+import React from 'react';
 import { Line } from 'react-chartjs-2';
+import 'chart.js/auto'; // Import the 'chart.js/auto' module
 
-const LineChart = () => {
+const LineChart = ({ input, label }) => {
     const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [
             {
-                label: 'Monthly Sales',
-                data: [12, 19, 3, 5, 2, 3, 15],
+                label: label ,
+                data: input,
                 fill: false,
                 borderColor: 'rgba(75,192,192,1)',
                 borderWidth: 2
@@ -23,8 +25,8 @@ const LineChart = () => {
     };
 
     return (
-        <div>
-            <h2>Monthly Sales Line Chart</h2>
+        <div >
+            <h2>{label}</h2>
             <Line data={data} options={options} />
         </div>
     );
